@@ -1,0 +1,17 @@
+# Dependencias para el traductor de archivos .po
+# Instalar con: pip install -r requirements-translator.txt
+
+# Cliente OpenAI para DeepSeek API
+openai>=1.0.0
+
+# Manejo de archivos .po
+polib>=1.2.0
+
+# Parsing de HTML
+beautifulsoup4>=4.12.0
+
+# Parser HTML adicional (recomendado para BeautifulSoup)
+lxml>=4.9.0
+
+# Cargar variables de entorno desde .env
+python-dotenv>=1.0.0

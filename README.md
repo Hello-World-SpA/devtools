@@ -13,7 +13,8 @@ devtools/
 │   └── requirements-translator.txt # Dependencias para po_translator.py
 ├── docs/
 │   └── guides/                     # Guías técnicas y tutoriales
-│       └── PO_TRANSLATOR_GUIDE.md  # Guía completa del traductor
+│       ├── PO_TRANSLATOR_GUIDE.md  # Guía completa del traductor
+│       └── COMMIT_GUIDE.md         # Guía de mensajes de commit y Git
 └── README.md
 ```
 
@@ -82,9 +83,13 @@ python scripts/po_translator.py --file locale/en/LC_MESSAGES/django.po
 
 ## 📚 Guías Disponibles
 
+### 🛠️ Herramientas y Scripts
 - **[PO_TRANSLATOR_GUIDE.md](docs/guides/PO_TRANSLATOR_GUIDE.md)** - Guía completa del traductor de archivos .po
 
-_Próximamente: Más guías técnicas sobre Django, Docker, Git, CI/CD y más..._
+### 📝 Mejores Prácticas
+- **[COMMIT_GUIDE.md](docs/guides/COMMIT_GUIDE.md)** - Guía completa de mensajes de commit y convenciones Git
+
+_Próximamente: Más guías técnicas sobre Django, Docker, CI/CD y más..._
 
 ---
 

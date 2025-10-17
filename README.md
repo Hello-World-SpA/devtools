@@ -17,7 +17,8 @@ devtools/
 │       ├── PO_TRANSLATOR_GUIDE.md     # Guía del traductor de archivos .po
 │       ├── COMMIT_GUIDE.md            # Guía de mensajes de commit
 │       ├── DJANGO_MIGRATIONS_GUIDE.md # Guía de migraciones avanzadas
-│       └── MODEL_DB_SYNC_GUIDE.md     # Guía del verificador de sincronización
+│       ├── MODEL_DB_SYNC_GUIDE.md     # Guía del verificador de sincronización
+│       └── GITHUB_ACTIONS_GUIDE.md    # Guía de GitHub Actions y gh CLI
 └── README.md
 ```
 
@@ -148,10 +149,13 @@ python check_model_db_sync.py
 ### 🐍 Django
 - **[DJANGO_MIGRATIONS_GUIDE.md](docs/guides/DJANGO_MIGRATIONS_GUIDE.md)** - Guía avanzada de migraciones con SeparateDatabaseAndState
 
+### 🚀 CI/CD y GitHub
+- **[GITHUB_ACTIONS_GUIDE.md](docs/guides/GITHUB_ACTIONS_GUIDE.md)** - Guía completa de GitHub Actions y gh CLI para diagnóstico de workflows
+
 ### 📝 Mejores Prácticas
 - **[COMMIT_GUIDE.md](docs/guides/COMMIT_GUIDE.md)** - Guía completa de mensajes de commit y convenciones Git
 
-_Próximamente: Más guías técnicas sobre Docker, CI/CD, Testing y más..._
+_Próximamente: Más guías técnicas sobre Docker, Testing y más..._
 
 ---
 

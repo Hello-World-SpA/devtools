@@ -8,13 +8,16 @@ Repositorio central de guías, comandos y scripts de utilidad para el equipo de 
 
 ```
 devtools/
-├── scripts/                        # Scripts de utilidad y automatización
-│   ├── po_translator.py            # Traductor automático de archivos .po con IA
-│   └── requirements-translator.txt # Dependencias para po_translator.py
+├── scripts/                           # Scripts de utilidad y automatización
+│   ├── po_translator.py               # Traductor automático de archivos .po con IA
+│   ├── check_model_db_sync.py         # Verificador de sincronización modelo-BD
+│   └── requirements-translator.txt    # Dependencias para po_translator.py
 ├── docs/
-│   └── guides/                     # Guías técnicas y tutoriales
-│       ├── PO_TRANSLATOR_GUIDE.md  # Guía completa del traductor
-│       └── COMMIT_GUIDE.md         # Guía de mensajes de commit y Git
+│   └── guides/                        # Guías técnicas y tutoriales
+│       ├── PO_TRANSLATOR_GUIDE.md     # Guía del traductor de archivos .po
+│       ├── COMMIT_GUIDE.md            # Guía de mensajes de commit
+│       ├── DJANGO_MIGRATIONS_GUIDE.md # Guía de migraciones avanzadas
+│       └── MODEL_DB_SYNC_GUIDE.md     # Guía del verificador de sincronización
 └── README.md
 ```
 
@@ -75,9 +78,54 @@ python scripts/po_translator.py --file locale/en/LC_MESSAGES/django.po
 
 #### 📖 Documentación Completa
 
-**Ver la guía completa con ejemplos, troubleshooting y flujo paso a paso:**
-
 👉 **[Guía Completa del Traductor](docs/guides/PO_TRANSLATOR_GUIDE.md)**
+
+---
+
+### 🔍 `check_model_db_sync.py` - Verificador de Sincronización Modelo-BD
+
+Script para detectar desincronización entre modelos de Django y tablas de PostgreSQL.
+
+**Características:**
+- ✅ Detecta campos faltantes en la base de datos
+- ✅ Identifica campos sobrantes en la BD
+- ✅ Verifica existencia de tablas
+- ✅ Reporta diferencias de forma clara y visual
+- ✅ Sugiere soluciones automáticas
+- ✅ Soporta múltiples apps Django
+
+#### 🚀 Inicio Rápido
+
+**1. Copiar el script a tu proyecto:**
+
+```bash
+cp scripts/check_model_db_sync.py /path/to/tu_proyecto/
+```
+
+**2. Configurar para tu proyecto:**
+
+```python
+# Editar línea 13: Cambiar nombre del proyecto
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tu_proyecto.settings')
+
+# Editar líneas 146-160: Agregar tus apps
+PROJECT_APPS = [
+    'accounts',
+    'products',
+    # ... tus apps aquí
+]
+```
+
+**3. Ejecutar el script:**
+
+```bash
+# Desde el directorio raíz de tu proyecto Django
+python check_model_db_sync.py
+```
+
+#### 📖 Documentación Completa
+
+👉 **[Guía del Verificador de Sincronización](docs/guides/MODEL_DB_SYNC_GUIDE.md)**
 
 ---
 
@@ -85,11 +133,15 @@ python scripts/po_translator.py --file locale/en/LC_MESSAGES/django.po
 
 ### 🛠️ Herramientas y Scripts
 - **[PO_TRANSLATOR_GUIDE.md](docs/guides/PO_TRANSLATOR_GUIDE.md)** - Guía completa del traductor de archivos .po
+- **[MODEL_DB_SYNC_GUIDE.md](docs/guides/MODEL_DB_SYNC_GUIDE.md)** - Guía del verificador de sincronización modelo-BD
+
+### 🐍 Django
+- **[DJANGO_MIGRATIONS_GUIDE.md](docs/guides/DJANGO_MIGRATIONS_GUIDE.md)** - Guía avanzada de migraciones con SeparateDatabaseAndState
 
 ### 📝 Mejores Prácticas
 - **[COMMIT_GUIDE.md](docs/guides/COMMIT_GUIDE.md)** - Guía completa de mensajes de commit y convenciones Git
 
-_Próximamente: Más guías técnicas sobre Django, Docker, CI/CD y más..._
+_Próximamente: Más guías técnicas sobre Docker, CI/CD, Testing y más..._
 
 ---
 
@@ -191,4 +243,4 @@ Problemas comunes y soluciones.
 
 ---
 
-**Última actualización:** 13 Oct 2025
+**Última actualización:** 17 Oct 2025

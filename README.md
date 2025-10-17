@@ -86,6 +86,8 @@ python scripts/po_translator.py --file locale/en/LC_MESSAGES/django.po
 
 Script para detectar desincronización entre modelos de Django y tablas de PostgreSQL.
 
+**⚠️ IMPORTANTE:** Este script debe ejecutarse **dentro del contexto de un proyecto Django**. Requiere especificar el nombre del proyecto Django para cargar la configuración correctamente.
+
 **Características:**
 - ✅ Detecta campos faltantes en la base de datos
 - ✅ Identifica campos sobrantes en la BD
@@ -96,30 +98,38 @@ Script para detectar desincronización entre modelos de Django y tablas de Postg
 
 #### 🚀 Inicio Rápido
 
-**1. Copiar el script a tu proyecto:**
+**1. Copiar el script a tu proyecto Django:**
 
 ```bash
-cp scripts/check_model_db_sync.py /path/to/tu_proyecto/
+# Copiar al directorio raíz de tu proyecto Django (donde está manage.py)
+cp scripts/check_model_db_sync.py /path/to/tu_proyecto_django/
 ```
 
-**2. Configurar para tu proyecto:**
+**2. Configurar el nombre de tu proyecto Django:**
 
 ```python
-# Editar línea 13: Cambiar nombre del proyecto
+# ⚠️ REQUERIDO: Editar línea 24
+# Cambiar 'pymemadweb.settings' por el nombre de TU proyecto Django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tu_proyecto.settings')
 
-# Editar líneas 146-160: Agregar tus apps
+# Tip: Busca este valor en tu manage.py
+```
+
+**3. Configurar las apps de tu proyecto:**
+
+```python
+# Editar líneas 157-171: Agregar tus apps personalizadas
 PROJECT_APPS = [
     'accounts',
     'products',
-    # ... tus apps aquí
+    # ... lista todas tus apps aquí
 ]
 ```
 
-**3. Ejecutar el script:**
+**4. Ejecutar el script:**
 
 ```bash
-# Desde el directorio raíz de tu proyecto Django
+# Desde el directorio raíz de tu proyecto Django (donde está manage.py)
 python check_model_db_sync.py
 ```
 

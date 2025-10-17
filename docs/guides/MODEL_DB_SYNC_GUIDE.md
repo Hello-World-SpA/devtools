@@ -33,34 +33,58 @@ El script `check_model_db_sync.py` compara cada modelo de Django con su tabla co
 
 ## 🚀 Inicio Rápido
 
-### 1. Copiar el script a tu proyecto
+### 1. Copiar el script a tu proyecto Django
+
+**IMPORTANTE:** Este script debe ejecutarse **dentro del contexto de un proyecto Django**. No es un script standalone.
 
 ```bash
-# Copiar desde devtools a tu proyecto Django
-cp /path/to/devtools/scripts/check_model_db_sync.py /path/to/tu_proyecto/
+# Copiar desde devtools al directorio raíz de tu proyecto Django
+cp /path/to/devtools/scripts/check_model_db_sync.py /path/to/tu_proyecto_django/
 ```
 
-### 2. Configurar el script para tu proyecto
+### 2. Configurar el nombre de tu proyecto Django
+
+**⚠️ REQUERIDO:** Debes especificar el nombre de tu proyecto Django para que el script pueda cargar la configuración correctamente.
 
 Edita el archivo `check_model_db_sync.py`:
 
 ```python
-# ⚠️ Línea 13: Cambiar 'pymemadweb.settings' por tu proyecto
+# ⚠️ Línea 24: CAMBIAR 'pymemadweb.settings' por el nombre de TU proyecto Django
+# Esto debe coincidir con el nombre que usas en manage.py
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tu_proyecto.settings')
 
-# ⚠️ Líneas 146-160: Actualizar con tus apps
+# Ejemplos comunes:
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'miproyecto.settings')
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+```
+
+**¿Cómo encontrar el nombre de tu proyecto?**
+
+Abre tu archivo `manage.py` y busca la línea que contiene `DJANGO_SETTINGS_MODULE`:
+
+```python
+# manage.py
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nombre_proyecto.settings')
+#                                                 ^^^^^^^^^^^^^ Usa este nombre
+```
+
+### 3. Configurar las apps de tu proyecto
+
+```python
+# ⚠️ Líneas 157-171: Actualizar con las apps de tu proyecto Django
 PROJECT_APPS = [
     'accounts',
     'products',
     'orders',
-    # ... tus apps aquí
+    # ... lista todas tus apps personalizadas aquí
 ]
 ```
 
-### 3. Ejecutar el script
+### 4. Ejecutar el script
 
 ```bash
-# Desde el directorio raíz de tu proyecto Django
+# Desde el directorio raíz de tu proyecto Django (donde está manage.py)
 python check_model_db_sync.py
 ```
 

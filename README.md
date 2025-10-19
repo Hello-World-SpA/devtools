@@ -8,16 +8,19 @@ Repositorio central de guías, comandos y scripts de utilidad para el equipo de 
 
 ```
 devtools/
-├── scripts/                           # Scripts de utilidad y automatización
-│   ├── po_translator.py               # Traductor automático de archivos .po con IA
-│   ├── check_model_db_sync.py         # Verificador de sincronización modelo-BD
-│   └── requirements-translator.txt    # Dependencias para po_translator.py
+├── scripts/                                # Scripts de utilidad y automatización
+│   ├── po_translator.py                    # Traductor automático de archivos .po con IA
+│   ├── check_model_db_sync.py              # Verificador de sincronización modelo-BD
+│   └── requirements-translator.txt         # Dependencias para po_translator.py
 ├── docs/
-│   └── guides/                        # Guías técnicas y tutoriales
-│       ├── PO_TRANSLATOR_GUIDE.md     # Guía del traductor de archivos .po
-│       ├── COMMIT_GUIDE.md            # Guía de mensajes de commit
-│       ├── DJANGO_MIGRATIONS_GUIDE.md # Guía de migraciones avanzadas
-│       └── MODEL_DB_SYNC_GUIDE.md     # Guía del verificador de sincronización
+│   └── guides/                             # Guías técnicas y tutoriales
+│       ├── PO_TRANSLATOR_GUIDE.md          # Guía del traductor de archivos .po
+│       ├── COMMIT_GUIDE.md                 # Guía de mensajes de commit
+│       ├── DJANGO_MIGRATIONS_GUIDE.md      # Guía de migraciones avanzadas
+│       ├── MODEL_DB_SYNC_GUIDE.md          # Guía del verificador de sincronización
+│       ├── GITHUB_ACTIONS_GUIDE.md         # Guía de GitHub Actions y gh CLI
+│       ├── PR_REVIEW_WORKFLOW_GUIDE.md     # Guía de flujo de PRs con doble revisión
+│       └── PR_CONVERSATIONS_CHECKLIST_GUIDE.md # Conversaciones y checklists en PRs
 └── README.md
 ```
 
@@ -148,10 +151,15 @@ python check_model_db_sync.py
 ### 🐍 Django
 - **[DJANGO_MIGRATIONS_GUIDE.md](docs/guides/DJANGO_MIGRATIONS_GUIDE.md)** - Guía avanzada de migraciones con SeparateDatabaseAndState
 
+### 🚀 CI/CD y GitHub
+- **[GITHUB_ACTIONS_GUIDE.md](docs/guides/GITHUB_ACTIONS_GUIDE.md)** - Guía completa de GitHub Actions y gh CLI para diagnóstico de workflows
+- **[PR_REVIEW_WORKFLOW_GUIDE.md](docs/guides/PR_REVIEW_WORKFLOW_GUIDE.md)** - Flujo de trabajo de Pull Requests con doble revisión usando gh CLI
+- **[PR_CONVERSATIONS_CHECKLIST_GUIDE.md](docs/guides/PR_CONVERSATIONS_CHECKLIST_GUIDE.md)** - Guía de conversaciones y checklists en Pull Requests
+
 ### 📝 Mejores Prácticas
 - **[COMMIT_GUIDE.md](docs/guides/COMMIT_GUIDE.md)** - Guía completa de mensajes de commit y convenciones Git
 
-_Próximamente: Más guías técnicas sobre Docker, CI/CD, Testing y más..._
+_Próximamente: Más guías técnicas sobre Docker, Testing y más..._
 
 ---
 

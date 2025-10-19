@@ -31,4 +31,7 @@ Thumbs.db
 # Backups
 *.backup
 *.bak
-backups/.claude/
+backups/
+
+# Claude Code configuraciones locales
+.claude/
